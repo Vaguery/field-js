@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Field example</title>
+  <script type="text/javascript" src="../js/paper-full.min.js"></script>
+  <!-- Define inlined PaperScript associate it with myCanvas -->
+  <script type="text/paperscript" canvas="myCanvas">
+
+    var middle_7 = new Point(100, 70);
+    var circle_7 = new Path.Circle(middle_7, 1);
+    circle_7.fillColor = 'red';
+
+    var middle_9 = new Point(210, 30);
+    var circle_9 = new Path.Circle(middle_9, 1);
+    circle_9.fillColor = 'green';
+
+    var middle_plus = new Point(33, 88);
+    var circle_plus = new Path.Circle(middle_plus, 1);
+    circle_plus.fillColor = 'blue';
+
+    var dist79 = middle_7.getDistance(middle_9)
+    var dist7plus = middle_7.getDistance(middle_plus)
+    var dist9plus = middle_9.getDistance(middle_plus)
+
+    function onFrame(event) {
+      circle_7.scale(1.01);
+      circle_9.scale(1.01);
+      circle_plus.scale(1.01);
+    }
+  </script>
+</head>
+<body>
+  <p>Hey there.</p>
+  <canvas id="myCanvas"></canvas>
+</body>
+</html>
